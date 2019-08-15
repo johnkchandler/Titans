@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Pangolin", cursive;
+  box-sizing: border-box;
+}
+
+header {
+  width: 60%;
+  height: 70px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer {
+  width: 60%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+.titans_container {
+  width: 60%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img_holder {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img_holder:hover {
+  background-color: purple;
+}
+
+.titan_img {
+  height: 300px;
+  width: 200px;
+}
+
+.titan_img:hover {
+  cursor: pointer;
+}
+
+.selected {
+  opacity: 0.5;
+}
+
+.selected:hover {
+  background-color: white !important;
+}
+
+.correct {
+  background-color: yellow !important;
+}
