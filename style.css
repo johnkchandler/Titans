@@ -65,6 +65,7 @@ footer a {
 
 .selected:hover {
   background-color: white !important;
+  cursor: default;
 }
 
 .correct {

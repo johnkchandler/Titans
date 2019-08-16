@@ -4,6 +4,7 @@ let rand = Math.floor(Math.random() * 6);
 //use random number to select random titan by index
 let titan = titans[rand];
 
+//select elements from the DOM
 let Robin = document.getElementById("Robin"),
   Raven = document.getElementById("Raven"),
   Starfire = document.getElementById("Starfire"),
@@ -13,81 +14,37 @@ let Robin = document.getElementById("Robin"),
   header = document.getElementById("header"),
   footer = document.getElementById("footer");
 
+//function for when user makes a selection
+
+function getClicked(element, character, success, failure) {
+  if (titan == character) {
+    header.innerHTML = "<h1>" + success + "</h1>";
+    footer.innerHTML = "<a href='./index.html'>play again</a>";
+    element.parentElement.classList.add("correct");
+  } else {
+    element.classList.add("selected");
+    element.parentElement.classList.add("selected");
+    header.innerHTML = "<h1>" + failure + "</h1>";
+  }
+}
+
 //run onClick function when user makes a selection
+
 Robin.onclick = function() {
-  if (titan == "Robin") {
-    header.innerHTML = "<h1>Excellent!</h1>";
-    footer.innerHTML = "<a href='./index.html'>play again</a>";
-    Robin.parentElement.classList.add("correct");
-  } else {
-    Robin.classList.add("selected");
-    Robin.parentElement.classList.add("selected");
-    guesses++;
-    header.innerHTML = "<h1>Guess again</h1>";
-  }
+  getClicked(Robin, "Robin", "Excellent!", "Guess again.");
 };
-
 Raven.onclick = function() {
-  if (titan == "Raven") {
-    header.innerHTML = "<h1>Ah, you got me.</h1>";
-    footer.innerHTML = "<a href='./index.html'>play again</a>";
-    Raven.parentElement.classList.add("correct");
-  } else {
-    Raven.classList.add("selected");
-    Raven.parentElement.classList.add("selected");
-    guesses++;
-    header.innerHTML = "<h1>Nope</h1>";
-  }
+  getClicked(Raven, "Raven", "Ah, you got me.", "Nope.");
 };
-
 Starfire.onclick = function() {
-  if (titan == "Starfire") {
-    header.innerHTML = "<h1>Shamalama-moo-moo</h1>";
-    footer.innerHTML = "<a href='./index.html'>play again</a>";
-    Starfire.parentElement.classList.add("correct");
-  } else {
-    Starfire.classList.add("selected");
-    Starfire.parentElement.classList.add("selected");
-    guesses++;
-    header.innerHTML = "<h1>You are the wrong.</h1>";
-  }
+  getClicked(Starfire, "Starfire", "Shamalama-moo-moo!", "You are the wrong.");
 };
-
 Beastboy.onclick = function() {
-  if (titan == "Beastboy") {
-    header.innerHTML = "<h1>You gots it, yo!</h1>";
-    footer.innerHTML = "<a href='./index.html'>play again</a>";
-    Beastboy.parentElement.classList.add("correct");
-  } else {
-    Beastboy.classList.add("selected");
-    Beastboy.parentElement.classList.add("selected");
-    guesses++;
-    header.innerHTML = "<h1>Guess again, fool!</h1>";
-  }
+  getClicked(Beastboy, "Beastboy", "You gots it, yo!", "Guess again, fool!");
 };
-
 Cyborg.onclick = function() {
-  if (titan == "Cyborg") {
-    header.innerHTML = "<h1>Booya-ka-shah!!</h1>";
-    footer.innerHTML = "<a href='./index.html'>play again</a>";
-    Cyborg.parentElement.classList.add("correct");
-  } else {
-    Cyborg.classList.add("selected");
-    Cyborg.parentElement.classList.add("selected");
-    guesses++;
-    header.innerHTML = "<h1>No way</h1>";
-  }
+  getClicked(Cyborg, "Cyborg", "Booya-ka-shah!!!", "No way.");
 };
-
 Bumblebee.onclick = function() {
-  if (titan == "Bumblebee") {
-    header.innerHTML = "<h1>That's whats up!</h1>";
-    footer.innerHTML = "<a href='./index.html'>play again</a>";
-    Bumblebee.parentElement.classList.add("correct");
-  } else {
-    Bumblebee.classList.add("selected");
-    Bumblebee.parentElement.classList.add("selected");
-    guesses++;
-    header.innerHTML = "<h1>Nuh uh</h1>";
-  }
+  getClicked(Bumblebee, "Bumblebee", "That's what's up!", "Nuh-uh.");
 };
