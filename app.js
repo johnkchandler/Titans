@@ -21,7 +21,7 @@ function getClicked(element, character, success, failure) {
     header.innerHTML = "<h1>" + success + "</h1>";
     footer.innerHTML = "<a href='./index.html'>play again</a>";
     element.parentElement.classList.add("correct");
-	var correct_audio = new Audio('./audio/correct.mp3');
+    var correct_audio = new Audio('./audio/correct.mp3');
     correct_audio.play();
   } else {
     element.classList.add("selected");
